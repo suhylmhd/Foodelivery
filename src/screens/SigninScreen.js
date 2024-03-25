@@ -86,7 +86,7 @@ const SigninScreen = ({navigation}) => {
         <Text style={styles.forgotPasswordText} onPress={() => navigation.navigate('Forgotpassword')}>Forgot Password</Text>
       </View>
       <TouchableOpacity style={styles.signinButton}>
-        <Text style={styles.signinButtonText}>Sign In</Text>
+        <Text style={styles.signinButtonText} onPress={() => navigation.navigate("Home")}>Sign In</Text>
       </TouchableOpacity>
       <View style={styles.signupContainer}>
         <Text style={styles.accountText}>Don't have an account ?</Text>

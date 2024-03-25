@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
       width : Display.setWidth(60)
     },
     titleText:{
-      color : Colors.DEFAULT_WHITE,
+      color : Colors.DEFAULT_YELLOW,
       fontSize : 32,
       fontFamily : Fonts.POPPINS_LIGHT
     }
