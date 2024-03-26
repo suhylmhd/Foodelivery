@@ -1,11 +1,11 @@
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import { CategoryMenuItem, Separator } from '../components'
+import { CategoryMenuItem, RestaurantCard, Separator } from '../components'
 import { Colors, Fonts, Mock } from '../constants'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Feather from 'react-native-vector-icons/Feather'
-import { ScrollView } from 'react-native-gesture-handler'
+import { FlatList, ScrollView } from 'react-native-gesture-handler'
 
 const sortStyle = isActive =>
   isActive
@@ -79,39 +79,40 @@ const HomeScreen = () => {
                     <Text style={styles.listHeaderTitle}>Top Rated</Text>
                     <Text style={styles.listHeaderSubtitle}>See All</Text>
                 </View>
-            </View>
+                <RestaurantCard/>
+            </View>            
             <View style={styles.sortListContainer}>
-          <TouchableOpacity
-            style={sortStyle(activeSortItem === 'recent')}
-            activeOpacity={0.8}
-            onPress={() => setActiveSortItem('recent')}>
-            <Text style={styles.sortListItemText}>Recent</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={sortStyle(activeSortItem === 'favorite')}
-            activeOpacity={0.8}
-            onPress={() => setActiveSortItem('favorite')}>
-            <Text style={styles.sortListItemText}>Favorite</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={sortStyle(activeSortItem === 'rating')}
-            activeOpacity={0.8}
-            onPress={() => setActiveSortItem('rating')}>
-            <Text style={styles.sortListItemText}>Rating</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={sortStyle(activeSortItem === 'popular')}
-            activeOpacity={0.8}
-            onPress={() => setActiveSortItem('popular')}>
-            <Text style={styles.sortListItemText}>Popular</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={sortStyle(activeSortItem === 'trending')}
-            activeOpacity={0.8}
-            onPress={() => setActiveSortItem('trending')}>
-            <Text style={styles.sortListItemText}>Trending</Text>
-          </TouchableOpacity>
-        </View>
+                <TouchableOpacity
+                    style={sortStyle(activeSortItem === 'recent')}
+                    activeOpacity={0.8}
+                    onPress={() => setActiveSortItem('recent')}>
+                    <Text style={styles.sortListItemText}>Recent</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={sortStyle(activeSortItem === 'favorite')}
+                    activeOpacity={0.8}
+                    onPress={() => setActiveSortItem('favorite')}>
+                    <Text style={styles.sortListItemText}>Favorite</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={sortStyle(activeSortItem === 'rating')}
+                    activeOpacity={0.8}
+                    onPress={() => setActiveSortItem('rating')}>
+                    <Text style={styles.sortListItemText}>Rating</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={sortStyle(activeSortItem === 'popular')}
+                    activeOpacity={0.8}
+                    onPress={() => setActiveSortItem('popular')}>
+                    <Text style={styles.sortListItemText}>Popular</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={sortStyle(activeSortItem === 'trending')}
+                    activeOpacity={0.8}
+                    onPress={() => setActiveSortItem('trending')}>
+                    <Text style={styles.sortListItemText}>Trending</Text>
+                </TouchableOpacity>
+            </View>
         </ScrollView>
     </View>
   )
@@ -230,7 +231,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: Colors.DEFAULT_WHITE,
       marginTop: 8,
-      elevation: 1,
+      elevation: 5,
     },
     sortListItem: {
       flex: 1,

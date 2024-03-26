@@ -6,5 +6,9 @@ const CATEGORIES = [
     {name: 'Drinks', logo: 'DRINKS'},
     {name: 'Noodles', logo: 'NOODLES'},
   ];
+
+  const RESTAURANT_DATA = [
+    {image: 'BURGER_KING' ,  name: 'Burger King' , rating: 4.5 , distance:'150m' , time : 15}
+  ];
   
-  export default {CATEGORIES};
+  export default {CATEGORIES , RESTAURANT_DATA};
